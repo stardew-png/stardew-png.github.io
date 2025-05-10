@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1>Stardew PNG</h1>
+        <p style="display: inline-flex; align-items: center; justify-content: center">
+            website by Emma
+            &nbsp;
+            <img src="/girl.webp" class="sprite" style="height: 2rem" />
+            <img src="/heart.png" class="sprite" style="height: 0.5rem" />
+        </p>
+    </header>
+
+    <main id="app">
+        <p class="box center">
+
+            <input v-model="query" id="query-input" class="box" list="query-suggestions"
+                placeholder="search for sprites">
+            <button @click="randomize">&#x2684;</button>
+            <datalist id="query-suggestions">
+                <option v-for="suggestion in suggestions" :value="suggestion"></option>
+            </datalist>
+        </p>
+        <p class="wide">
+            <span v-for="image in images">
+                <a :href="`/details/?img=${encodeURIComponent(image)}&query=${query}`">
+                    <img :src="image" class="sprite" />
+                </a>
+            </span>
+        </p>
+    </main>
+
+    <template id="example-template">
+        <div>Who</div>
+    </template>
+
+    <script type="module" src="scripts/api.js"></script>
+    <script type="module" src="scripts/vue-app.js"></script>
+</body>
+
+</html>
