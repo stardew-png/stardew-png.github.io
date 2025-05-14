@@ -1,1 +1,1 @@
-{"files": ["Buildings/Shipping_Bin/0.png"], "shared": ["building", "shipping", "bin"]}
+{"files": ["Buildings/Shipping_Bin/0.png", "TileSheets/Craftables/243.png", "TileSheets/Craftables/244.png", "TileSheets/Craftables/245.png", "TileSheets/Craftables/246.png", "TileSheets/Craftables/247.png", "TileSheets/Craftables/248.png"], "shared": ["building", "shipping", "bin", "wood", "partial"]}

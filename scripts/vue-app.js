@@ -8,8 +8,11 @@ export function mountApp() {
             const suggestions = ref(API.allTags);
             const images = ref([]);
             const randomize = async () => {
-                query.value = await API.getRandomTags(2);
+                query.value = await API.getRandomTags(5, 100);
             };
+            // if it's empty to start, fill in a random one!
+            if (query.value === "")
+                randomize();
             var activeQuery = "";
             const refreshImages = async () => {
                 const currentTags = query.value.split(" ")

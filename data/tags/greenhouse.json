@@ -1,1 +1,1 @@
-{"files": ["Buildings/Greenhouse/1.png", "Buildings/Greenhouse/0.png"], "shared": ["building", "greenhouse"]}
+{"files": ["Maps/walls_and_floors/154.png", "Buildings/Greenhouse/1.png", "Buildings/Greenhouse/0.png"], "shared": ["floor", "greenhouse", "tile", "building"]}

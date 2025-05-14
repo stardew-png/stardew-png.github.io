@@ -1,1 +1,1 @@
-{"files": ["Buildings/Earth_Obelisk/0.png", "Buildings/Island_Obelisk/0.png", "Buildings/Desert_Obelisk/0.png", "Buildings/Water_Obelisk/0.png"], "shared": ["building", "earth_obelisk", "obelisk", "island", "desert", "water", "ocean"]}
+{"files": ["Maps/Farm_Obelisk/0.png", "Buildings/Earth_Obelisk/0.png", "Buildings/Island_Obelisk/0.png", "Buildings/Desert_Obelisk/0.png", "Buildings/Water_Obelisk/0.png", "TileSheets/Craftables/233.png"], "shared": ["farm", "obelisk", "warp", "ginger", "island", "building", "earth", "desert", "water", "ocean", "machine", "wizard"]}

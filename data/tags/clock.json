@@ -1,1 +1,1 @@
-{"files": ["Buildings/Gold_Clock/0.png"], "shared": ["gold", "clock", "building"]}
+{"files": ["LooseSprites/emojis/3.png", "Buildings/Gold_Clock/0.png", "TileSheets/Craftables/66.png", "TileSheets/Craftables/67.png", "TileSheets/SecretNotesImages/5.png", "TileSheets/furniture_3/17.png"], "shared": ["emote", "clock", "gold", "building", "furniture", "wood", "decoration", "bear", "note", "background", "moon", "town", "night"]}
