@@ -1,1 +1,1 @@
-{"files": ["TileSheets/Craftables/270.png", "TileSheets/Craftables/271.png"], "shared": ["sign", "post", "wood", "text", "empty"]}
+{"files": ["TileSheets/Craftables/270.png", "TileSheets/Craftables/271.png"], "shared": ["sign", "post", "wood", "text", "craftable", "item", "empty"]}

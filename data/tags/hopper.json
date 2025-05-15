@@ -1,1 +1,1 @@
-{"files": ["Maps/springobjects/375.png", "TileSheets/Craftables/264.png", "TileSheets/Craftables/265.png", "TileSheets/Craftables/266.png"], "shared": ["unused", "hopper", "furnace", "machine", "wood", "partial"]}
+{"files": ["Maps/springobjects/375.png", "TileSheets/Craftables/264.png", "TileSheets/Craftables/265.png", "TileSheets/Craftables/266.png"], "shared": ["unused", "hopper", "furnace", "item", "machine", "wood", "craftable", "partial"]}

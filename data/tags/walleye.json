@@ -1,1 +1,1 @@
-{"files": ["Maps/springobjects/140.png", "LooseSprites/AquariumFish/10.png", "LooseSprites/AquariumFish/29.png", "TileSheets/BuffsIcons/1.png", "TileSheets/furniture_2/35.png"], "shared": ["fish", "walleye", "aquarium", "buff", "fishing", "bobber", "decoration", "furniture", "pike"]}
+{"files": ["Maps/springobjects/140.png", "LooseSprites/AquariumFish/10.png", "LooseSprites/AquariumFish/29.png", "TileSheets/BuffsIcons/1.png", "TileSheets/furniture_2/35.png"], "shared": ["fish", "walleye", "item", "aquarium", "buff", "fishing", "bobber", "decoration", "furniture", "pike"]}

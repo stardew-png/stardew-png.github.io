@@ -1,1 +1,1 @@
-{"files": ["Maps/springobjects/787.png", "TileSheets/Craftables/226.png"], "shared": ["battery", "pack", "sun", "panel", "machine", "blue", "iron"]}
+{"files": ["Maps/springobjects/787.png", "TileSheets/Craftables/226.png"], "shared": ["battery", "pack", "item", "sun", "panel", "machine", "blue", "iron", "craftable"]}

@@ -1,1 +1,1 @@
-{"files": ["Maps/submarine_tilesheet/0.png", "Maps/submarine_tilesheet/1.png", "Maps/springobjects/798.png", "Maps/springobjects/799.png", "Maps/springobjects/800.png"], "shared": ["submarine", "night", "market", "partial", "midnight", "squid", "fish", "spookfish", "blobfish"]}
+{"files": ["Maps/submarine_tilesheet/0.png", "Maps/submarine_tilesheet/1.png", "Maps/springobjects/798.png", "Maps/springobjects/799.png", "Maps/springobjects/800.png"], "shared": ["submarine", "night", "market", "partial", "midnight", "squid", "fish", "item", "spookfish", "blobfish"]}

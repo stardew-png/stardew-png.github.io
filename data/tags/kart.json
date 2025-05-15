@@ -1,1 +1,1 @@
-{"files": ["TileSheets/Craftables/154.png"], "shared": ["furniture", "junimo", "kart", "arcade", "system"]}
+{"files": ["Minigames/MineCart/0.png", "Minigames/MineCart/6.png", "Minigames/MineCart/10.png", "Minigames/MineCart/35.png", "Minigames/MineCart/36.png", "Minigames/MineCart/43.png", "Minigames/MineCart/44.png", "TileSheets/Craftables/154.png"], "shared": ["kart", "cart", "junimo", "green", "menu", "small", "furniture", "arcade", "system"]}

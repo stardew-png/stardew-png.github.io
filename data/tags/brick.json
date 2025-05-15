@@ -1,1 +1,1 @@
-{"files": ["Maps/springobjects/293.png", "TileSheets/furniture/203.png", "TileSheets/Objects_2/100.png"], "shared": ["brick", "floor", "clay", "decoration", "gray", "rock", "stone", "book", "jack", "nimble", "thick", "brown", "combat"]}
+{"files": ["Maps/springobjects/293.png", "TileSheets/furniture/203.png", "TileSheets/Objects_2/100.png"], "shared": ["brick", "floor", "clay", "item", "craftable", "decoration", "gray", "rock", "stone", "book", "jack", "nimble", "thick", "brown", "combat"]}

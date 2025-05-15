@@ -1,1 +1,1 @@
-{"files": ["Maps/springobjects/12.png", "Maps/springobjects/60.png", "Maps/springobjects/61.png", "Maps/springobjects/533.png", "TileSheets/bobbers/64.png", "TileSheets/bobbers/72.png"], "shared": ["emerald", "node", "gem", "bits", "ring", "green", "fishing", "bobber"]}
+{"files": ["Maps/springobjects/12.png", "Maps/springobjects/60.png", "Maps/springobjects/61.png", "Maps/springobjects/533.png", "TileSheets/bobbers/64.png", "TileSheets/bobbers/72.png"], "shared": ["emerald", "node", "gem", "item", "bits", "ring", "green", "fishing", "bobber"]}

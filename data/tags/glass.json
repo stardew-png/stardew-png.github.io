@@ -1,1 +1,1 @@
-{"files": ["Maps/springobjects/118.png", "Maps/springobjects/738.png", "TileSheets/tools/7.png", "TileSheets/furniture_3/24.png"], "shared": ["artifact", "glass", "shards", "beaker", "unknown", "tool", "search", "magnifying", "decoration", "furniture", "sword"]}
+{"files": ["Maps/springobjects/118.png", "Maps/springobjects/738.png", "TileSheets/tools/7.png", "TileSheets/furniture_3/24.png"], "shared": ["artifact", "glass", "shards", "item", "beaker", "unknown", "tool", "search", "magnifying", "decoration", "furniture", "sword"]}

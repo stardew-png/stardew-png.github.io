@@ -1,1 +1,1 @@
-{"files": ["Maps/springobjects/588.png", "Maps/walls_and_floors/2.png", "Maps/walls_and_floors/90.png", "TileSheets/furniture/163.png", "TileSheets/furniture/498.png"], "shared": ["palm", "fossil", "artifact", "wallpaper", "tree", "furniture", "decoration", "pot", "plant"]}
+{"files": ["Maps/springobjects/588.png", "Maps/walls_and_floors/2.png", "Maps/walls_and_floors/90.png", "TileSheets/furniture/163.png", "TileSheets/furniture/498.png"], "shared": ["palm", "fossil", "artifact", "item", "wallpaper", "tree", "furniture", "decoration", "pot", "plant"]}
