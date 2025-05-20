@@ -22,7 +22,7 @@ export function mountApp() {
 
             // this is OK only because [image] is constant.
             const fullImagePath = `https://stardew-png.github.io${image}`;
-            const crossStitchLink = `https://puzzleweaver.github.io/cross-stitch-maker/?img=${encodeURIComponent(fullImagePath)}`;
+            const crossStitchLink = `https://pattern-generator.github.io/?img=${encodeURIComponent(fullImagePath)}`;
 
             return {
                 image,
