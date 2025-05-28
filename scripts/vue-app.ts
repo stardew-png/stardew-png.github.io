@@ -8,7 +8,7 @@ export function mountApp() {
         setup() {
             const query = ref(getQueryParam("query", ""));
             const suggestions = ref(API.allTags);
-            const images = ref([]);
+            const allImages = ref([]);
             const category = ref(undefined);
 
             const randomize = async () => {
@@ -29,6 +29,7 @@ export function mountApp() {
 
             var activeQuery = "";
             const refreshImages = async () => {
+                pageIndex.value = 0;
                 const currentTags = query.value.split(" ")
                     .filter((tag: string) => API.allTags.includes(tag));
 
@@ -44,9 +45,35 @@ export function mountApp() {
                     console.log(nextTags);
                     console.log(suggestions.value);
 
-                    images.value = await API.getImagesByTags(currentTags);
+                    allImages.value = await API.getImagesByTags(currentTags);
                 }
             };
+
+            const pageSize = 100;
+            const pageIndex = ref(0);
+            const numPages = computed(() => {
+                return Math.ceil(allImages.value.length / pageSize);
+            });
+            const page = computed(() => {
+                const images = allImages.value.slice(
+                    pageIndex.value * pageSize,
+                    (pageIndex.value + 1) * pageSize,
+                );
+                return images;
+            });
+            const hasNextPage = computed(() => pageIndex.value < numPages.value - 1);
+            const hasPreviousPage = computed(() => pageIndex.value > 0);
+            const stepPage = (delta: number) => {
+                pageIndex.value += delta;
+                setLoading();
+            };
+            const pageLoading = ref(false);
+            const setLoading = () => {
+                pageLoading.value = true;
+                setTimeout(() => pageLoading.value = false, 1000);
+                setTimeout(() => window.scrollTo(0, 0), 10);
+            };
+            setLoading();
 
             // send query when the page loads.
             refreshImages();
@@ -57,7 +84,14 @@ export function mountApp() {
                 query,
                 randomize,
                 suggestions,
-                images,
+                images: page,
+
+                hasNextPage,
+                hasPreviousPage,
+                stepPage,
+                pageIndex,
+                numPages,
+                pageLoading,
 
                 categoryMessage: computed(() => {
                     if (category.value !== undefined)

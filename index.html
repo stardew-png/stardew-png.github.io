@@ -54,12 +54,25 @@
             </p>
         </div>
         <p class="wide">
-            <span v-for="image in images">
+            <span v-if="pageLoading"
+                style="width: 100%; display: inline-flex; justify-content: center; align-items: center; height: 40vh">
+                <img src="/images/thinking.gif" style="width: 10em; height: 10em; image-rendering: pixelated" />
+            </span>
+            <span v-else v-for="image in images">
                 <a :href="`/details/?img=${encodeURIComponent(image)}&query=${query}`">
                     <img :src="image" class="sprite" />
                 </a>
             </span>
-        </p>
+            <br>
+            <span class="box center wood" style="display: inline-block">
+                <button :disabled="!hasPreviousPage" @click="() => stepPage(-1)">Previous</button>
+                &nbsp;
+                <span class="onwood">
+                    page {{pageIndex+1}} of {{numPages}}
+                </span>
+                &nbsp;
+                <button :disabled="!hasNextPage" @click="() => stepPage(1)">Next</button>
+            </span>
     </main>
 
     <template id="example-template">
