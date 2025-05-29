@@ -13,6 +13,7 @@ export function mountApp() {
 
             const randomize = async () => {
                 query.value = await API.getRandomTags(category.value, 5, 100);
+                setLoading();
             };
 
             const toggleCategory = (newCategory: string) => {
@@ -35,7 +36,8 @@ export function mountApp() {
 
                 const nextQuery = currentTags.join(" ");
 
-                if (nextQuery !== activeQuery) {
+                if (`${nextQuery}` !== `${activeQuery}`) {
+                    if (nextQuery.length !== 0) setLoading();
                     activeQuery = nextQuery;
                     const nextTags = await API.getTagsByTags(currentTags);
                     suggestions.value = nextTags.map(
@@ -66,12 +68,18 @@ export function mountApp() {
             const stepPage = (delta: number) => {
                 pageIndex.value += delta;
                 setLoading();
+                setTimeout(() => window.scrollTo(0, 0), 10);
             };
             const pageLoading = ref(false);
+            var loadingTimeout: number | undefined = undefined;
             const setLoading = () => {
                 pageLoading.value = true;
-                setTimeout(() => pageLoading.value = false, 1000);
-                setTimeout(() => window.scrollTo(0, 0), 10);
+                if (loadingTimeout !== undefined)
+                    clearTimeout(loadingTimeout);
+                loadingTimeout = setTimeout(() => {
+                    loadingTimeout = undefined;
+                    pageLoading.value = false;
+                }, 1000);
             };
             setLoading();
 

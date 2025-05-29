@@ -10,6 +10,7 @@ export function mountApp() {
             const category = ref(undefined);
             const randomize = async () => {
                 query.value = await API.getRandomTags(category.value, 5, 100);
+                setLoading();
             };
             const toggleCategory = (newCategory) => {
                 // set the category either to the new thing, or to nothing.
@@ -29,7 +30,9 @@ export function mountApp() {
                 const currentTags = query.value.split(" ")
                     .filter((tag) => API.allTags.includes(tag));
                 const nextQuery = currentTags.join(" ");
-                if (nextQuery !== activeQuery) {
+                if (`${nextQuery}` !== `${activeQuery}`) {
+                    if (nextQuery.length !== 0)
+                        setLoading();
                     activeQuery = nextQuery;
                     const nextTags = await API.getTagsByTags(currentTags);
                     suggestions.value = nextTags.map(tag => [...currentTags, tag].join(" "));
@@ -53,12 +56,18 @@ export function mountApp() {
             const stepPage = (delta) => {
                 pageIndex.value += delta;
                 setLoading();
+                setTimeout(() => window.scrollTo(0, 0), 10);
             };
             const pageLoading = ref(false);
+            var loadingTimeout = undefined;
             const setLoading = () => {
                 pageLoading.value = true;
-                setTimeout(() => pageLoading.value = false, 1000);
-                setTimeout(() => window.scrollTo(0, 0), 10);
+                if (loadingTimeout !== undefined)
+                    clearTimeout(loadingTimeout);
+                loadingTimeout = setTimeout(() => {
+                    loadingTimeout = undefined;
+                    pageLoading.value = false;
+                }, 1000);
             };
             setLoading();
             // send query when the page loads.
