@@ -21,7 +21,6 @@ export function mountApp() {
                 if (newCategory === category.value) category.value = undefined;
                 else category.value = newCategory;
 
-                console.log(`Set category to: ${category.value}`);
                 randomize();
             }
 
@@ -39,13 +38,10 @@ export function mountApp() {
                 if (`${nextQuery}` !== `${activeQuery}`) {
                     if (nextQuery.length !== 0) setLoading();
                     activeQuery = nextQuery;
-                    const nextTags = await API.getTagsByTags(currentTags);
-                    suggestions.value = nextTags.map(
-                        tag => [...currentTags, tag].join(" "),
+                    nextTags.value = await API.getTagsByTags(currentTags);
+                    suggestions.value = nextTags.value.map(
+                        (tag: string) => [...currentTags, tag].join(" "),
                     );
-                    console.log(currentTags);
-                    console.log(nextTags);
-                    console.log(suggestions.value);
 
                     allImages.value = await API.getImagesByTags(currentTags);
                 }
@@ -83,6 +79,8 @@ export function mountApp() {
             };
             setLoading();
 
+            const nextTags = ref([]);
+
             // send query when the page loads.
             refreshImages();
 
@@ -93,6 +91,8 @@ export function mountApp() {
                 randomize,
                 suggestions,
                 images: page,
+
+                nextTags,
 
                 hasNextPage,
                 hasPreviousPage,

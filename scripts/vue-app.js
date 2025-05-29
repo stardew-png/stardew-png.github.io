@@ -18,7 +18,6 @@ export function mountApp() {
                     category.value = undefined;
                 else
                     category.value = newCategory;
-                console.log(`Set category to: ${category.value}`);
                 randomize();
             };
             // if it's empty to start, fill in a random one!
@@ -34,11 +33,8 @@ export function mountApp() {
                     if (nextQuery.length !== 0)
                         setLoading();
                     activeQuery = nextQuery;
-                    const nextTags = await API.getTagsByTags(currentTags);
-                    suggestions.value = nextTags.map(tag => [...currentTags, tag].join(" "));
-                    console.log(currentTags);
-                    console.log(nextTags);
-                    console.log(suggestions.value);
+                    nextTags.value = await API.getTagsByTags(currentTags);
+                    suggestions.value = nextTags.value.map((tag) => [...currentTags, tag].join(" "));
                     allImages.value = await API.getImagesByTags(currentTags);
                 }
             };
@@ -70,6 +66,7 @@ export function mountApp() {
                 }, 1000);
             };
             setLoading();
+            const nextTags = ref([]);
             // send query when the page loads.
             refreshImages();
             watch(query, refreshImages);
@@ -78,6 +75,7 @@ export function mountApp() {
                 randomize,
                 suggestions,
                 images: page,
+                nextTags,
                 hasNextPage,
                 hasPreviousPage,
                 stepPage,

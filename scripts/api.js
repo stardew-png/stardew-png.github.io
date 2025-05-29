@@ -67,11 +67,9 @@ export class API {
             // Reset if too specific
             if (nextChoices.length === 0) {
                 tags = [];
-                console.log("Reset.");
                 continue;
             }
             const nextTag = choose(nextChoices);
-            console.log(`[${tags.join(",")}] += ${nextTag}`);
             tags.push(nextTag);
         }
     }
